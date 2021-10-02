@@ -72,9 +72,6 @@ public class SpecialitylistAdapter extends RecyclerView.Adapter<SpecialitylistAd
     }
 
 
-
-
-
     public void addAll(List<Speciality> asList) {
         int lastIndex = specialityList.size();
         specialityList.addAll(asList);
