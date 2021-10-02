@@ -101,11 +101,14 @@ public class Specialities extends AppCompatActivity {
 
 
         swiperefreshspec.setOnRefreshListener(() -> {
-         //  currentPage = 1;
-         //  specialityList.clear();
 
-            swiperefreshspec.setRefreshing(false);
-         //   getSpecialityList();
+            swiperefreshspec.setRefreshing(true);
+            specialityList.clear();
+            specialityList = new ArrayList<>();
+            mainViewModel.getAllSpecialities(currentPage);
+            specialitylistAdapter.notifyItemRangeRemoved(0, specialityList.size());
+            currentPage = 1;
+            mainViewModel.getAllSpecialities(currentPage);
         });
 
 
